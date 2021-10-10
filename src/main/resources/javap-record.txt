@@ -1,0 +1,9 @@
+Compiled from "GeoLocation.java"
+public final class io.vividcode.java11to17.record.record.GeoLocation extends java.lang.Record {
+  public io.vividcode.java11to17.record.record.GeoLocation(double, double);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public double lng();
+  public double lat();
+}

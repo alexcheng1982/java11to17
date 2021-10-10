@@ -1,0 +1,13 @@
+Compiled from "GeoLocation.kt"
+public final class GeoLocation {
+  public GeoLocation(double, double);
+  public final double getLng();
+  public final double getLat();
+  public final double component1();
+  public final double component2();
+  public final GeoLocation copy(double, double);
+  public static GeoLocation copy$default(GeoLocation, double, double, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}

@@ -1,0 +1,23 @@
+Compiled from "GeoLocation.scala"
+public class GeoLocation implements scala.Product,java.io.Serializable {
+  public static scala.Option<scala.Tuple2<java.lang.Object, java.lang.Object>> unapply(GeoLocation);
+  public static GeoLocation apply(double, double);
+  public static scala.Function1<scala.Tuple2<java.lang.Object, java.lang.Object>, GeoLocation> tupled();
+  public static scala.Function1<java.lang.Object, scala.Function1<java.lang.Object, GeoLocation>> curried();
+  public scala.collection.Iterator<java.lang.String> productElementNames();
+  public double lng();
+  public double lat();
+  public GeoLocation copy(double, double);
+  public double copy$default$1();
+  public double copy$default$2();
+  public java.lang.String productPrefix();
+  public int productArity();
+  public java.lang.Object productElement(int);
+  public scala.collection.Iterator<java.lang.Object> productIterator();
+  public boolean canEqual(java.lang.Object);
+  public java.lang.String productElementName(int);
+  public int hashCode();
+  public java.lang.String toString();
+  public boolean equals(java.lang.Object);
+  public GeoLocation(double, double);
+}

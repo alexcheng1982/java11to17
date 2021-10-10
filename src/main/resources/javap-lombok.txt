@@ -1,0 +1,9 @@
+Compiled from "GeoLocation.java"
+public final class io.vividcode.java11to17.record.lombok.GeoLocation {
+  public io.vividcode.java11to17.record.lombok.GeoLocation(double, double);
+  public double getLng();
+  public double getLat();
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+  public java.lang.String toString();
+}
