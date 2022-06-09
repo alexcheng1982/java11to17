@@ -12,23 +12,21 @@ import jdk.incubator.foreign.SequenceLayout;
 
 public class PointStructure {
 
-  private final MemoryLayout pointLayout = MemoryLayout.structLayout(
-      MemoryLayouts.JAVA_INT.withName("x"),
-      MemoryLayouts.JAVA_INT.withName("y")
-  );
-  private final SequenceLayout pointsLayout = MemoryLayout.sequenceLayout(
-      this.pointLayout);
-  private final VarHandle xHandle = this.pointsLayout.varHandle(int.class,
-      PathElement.sequenceElement(),
-      PathElement.groupElement("x"));
-  private final VarHandle yHandle = this.pointsLayout.varHandle(int.class,
-      PathElement.sequenceElement(),
-      PathElement.groupElement("y"));
+  private final MemoryLayout pointLayout =
+      MemoryLayout.structLayout(
+          MemoryLayouts.JAVA_INT.withName("x"), MemoryLayouts.JAVA_INT.withName("y"));
+  private final SequenceLayout pointsLayout = MemoryLayout.sequenceLayout(this.pointLayout);
+  private final VarHandle xHandle =
+      this.pointsLayout.varHandle(
+          int.class, PathElement.sequenceElement(), PathElement.groupElement("x"));
+  private final VarHandle yHandle =
+      this.pointsLayout.varHandle(
+          int.class, PathElement.sequenceElement(), PathElement.groupElement("y"));
 
   public MemorySegment save(List<Point> points) {
-    MemorySegment segment = MemorySegment.allocateNative(
-        this.pointLayout.byteSize() * points.size(),
-        ResourceScope.newImplicitScope());
+    MemorySegment segment =
+        MemorySegment.allocateNative(
+            this.pointLayout.byteSize() * points.size(), ResourceScope.newImplicitScope());
     for (int i = 0; i < points.size(); i++) {
       Point point = points.get(i);
       this.xHandle.set(segment, (long) i, point.x());
@@ -38,8 +36,7 @@ public class PointStructure {
   }
 
   public List<Point> load(MemorySegment segment) {
-    int numberOfPoints = (int) (segment.byteSize()
-        / this.pointLayout.byteSize());
+    int numberOfPoints = (int) (segment.byteSize() / this.pointLayout.byteSize());
     List<Point> points = new ArrayList<>(numberOfPoints);
     for (int i = 0; i < numberOfPoints; i++) {
       int x = (int) this.xHandle.get(segment, (long) i);

@@ -4,8 +4,7 @@ public class NPE {
 
   private static class A {
 
-    void doSomething() {
-    }
+    void doSomething() {}
   }
 
   private static class B {

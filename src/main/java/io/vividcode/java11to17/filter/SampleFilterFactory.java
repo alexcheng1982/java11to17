@@ -6,8 +6,7 @@ import java.util.function.BinaryOperator;
 public class SampleFilterFactory implements BinaryOperator<ObjectInputFilter> {
 
   @Override
-  public ObjectInputFilter apply(ObjectInputFilter current,
-      ObjectInputFilter next) {
+  public ObjectInputFilter apply(ObjectInputFilter current, ObjectInputFilter next) {
     if (current == null) {
       return next;
     } else {

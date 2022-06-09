@@ -7,10 +7,8 @@ import java.lang.constant.MethodTypeDesc;
 public class UseConstants {
 
   public void describe() {
-    MethodTypeDesc desc = MethodTypeDesc.of(
-        ConstantDescs.CD_void,
-        ClassDesc.of("java.lang.String")
-    );
+    MethodTypeDesc desc =
+        MethodTypeDesc.of(ConstantDescs.CD_void, ClassDesc.of("java.lang.String"));
     System.out.println(desc.descriptorString()); // (Ljava/lang/String;)V
   }
 }
