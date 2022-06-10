@@ -3,9 +3,7 @@ package io.vividcode.java11to17.sw;
 public class SwitchStatement {
 
   enum TrafficColor {
-    RED,
-    YELLOW,
-    GREEN
+    RED, YELLOW, GREEN
   }
 
   public void trafficControl(TrafficColor color) {

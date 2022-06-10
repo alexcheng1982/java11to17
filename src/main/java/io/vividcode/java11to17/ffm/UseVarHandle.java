@@ -10,8 +10,10 @@ import jdk.incubator.foreign.ResourceScope;
 public class UseVarHandle {
 
   public void access() {
-    MemorySegment segment = MemorySegment.allocateNative(20, ResourceScope.newImplicitScope());
-    VarHandle varHandle = MemoryHandles.varHandle(int.class, ByteOrder.nativeOrder());
+    MemorySegment segment = MemorySegment.allocateNative(20,
+        ResourceScope.newImplicitScope());
+    VarHandle varHandle = MemoryHandles.varHandle(int.class,
+        ByteOrder.nativeOrder());
     for (int i = 0; i < 5; i++) {
       varHandle.set(segment, i * 4, i * 100);
     }

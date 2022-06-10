@@ -4,8 +4,9 @@ import java.util.concurrent.ExecutionException;
 
 public class JFRStreamingMain {
 
-  public static void main(String[] args) throws InterruptedException, ExecutionException {
-    //    new JFRStreaming().monitorCPU();
+  public static void main(String[] args)
+      throws InterruptedException, ExecutionException {
+//    new JFRStreaming().monitorCPU();
     new JFRStreamingAsync().monitorCPU();
   }
 }

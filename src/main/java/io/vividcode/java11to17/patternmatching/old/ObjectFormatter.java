@@ -4,7 +4,9 @@ import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/** Old way of using instanceof */
+/**
+ * Old way of using instanceof
+ */
 public class ObjectFormatter {
 
   public String format(Object input) {

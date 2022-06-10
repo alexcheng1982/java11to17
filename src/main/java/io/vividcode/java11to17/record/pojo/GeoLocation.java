@@ -2,7 +2,9 @@ package io.vividcode.java11to17.record.pojo;
 
 import java.util.Objects;
 
-/** POJO version of value objects */
+/**
+ * POJO version of value objects
+ */
 public class GeoLocation {
 
   private final double lng;
@@ -30,7 +32,8 @@ public class GeoLocation {
       return false;
     }
     GeoLocation that = (GeoLocation) o;
-    return Double.compare(that.lng, this.lng) == 0 && Double.compare(that.lat, this.lat) == 0;
+    return Double.compare(that.lng, this.lng) == 0
+        && Double.compare(that.lat, this.lat) == 0;
   }
 
   @Override
@@ -40,6 +43,9 @@ public class GeoLocation {
 
   @Override
   public String toString() {
-    return "GeoLocation{" + "lng=" + this.lng + ", lat=" + this.lat + '}';
+    return "GeoLocation{" +
+        "lng=" + this.lng +
+        ", lat=" + this.lat +
+        '}';
   }
 }

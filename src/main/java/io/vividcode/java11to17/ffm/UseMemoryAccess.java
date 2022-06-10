@@ -8,7 +8,8 @@ import jdk.incubator.foreign.ResourceScope;
 public class UseMemoryAccess {
 
   public void access() {
-    MemorySegment segment = MemorySegment.allocateNative(20, ResourceScope.newImplicitScope());
+    MemorySegment segment = MemorySegment.allocateNative(20,
+        ResourceScope.newImplicitScope());
     for (int i = 0; i < 5; i++) {
       MemoryAccess.setIntAtIndex(segment, i, i * 100);
     }
